@@ -9,6 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>   
+
+
+
+
+/* Ensure the main container of the chat widget occupies the full width on mobile */
+@media only screen and (max-width: 767px) {
+  /* Replace '.elevenlabs-chat-container' with the actual class/ID of your chat container */
+  .elevenlabs-chat-container,
+  /* If the widget is embedded in an iframe, target the iframe directly */
+  iframe.elevenlabs-widget-iframe {
+    width: 100% !important;
+    max-width: 100% !important; /* Ensure it doesn't exceed the viewport width */
+    left: 0 !important; /* Align to the left edge */
+    right: 0 !important; /* Align to the right edge */
+    box-sizing: border-box; /* Ensure padding/border is included in the width calculation */
+  }
+
+  /* Ensure the internal chat content can scroll if it exceeds the screen height */
+  /* You may need to inspect the chat's inner content container for the correct class name */
+  .elevenlabs-chat-content {
+    overflow-y: auto !important; /* Allow vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    height: 100% !important; /* Occupy full height to allow internal scrolling */
+  }
+}
+
+
+
         
         * {
             font-family: 'IBM Plex Sans Arabic', sans-serif;
